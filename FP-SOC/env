@@ -1,0 +1,11 @@
+# my-log-analyzer-fe/.env
+
+# Judul aplikasi (opsional, bisa diakses via import.meta.env.VITE_APP_TITLE)
+VITE_APP_TITLE=Log Analyzer Pro
+
+# Base URL untuk API backend Anda.
+# Ganti dengan URL backend lokal atau production Anda.
+# Jika backend berjalan di port 8000 dengan prefix /api:
+VITE_API_BASE_URL=http://localhost:8000/api
+# Jika Anda menggunakan proxy Vite (lihat vite.config.ts), ini bisa '/api'
+# VITE_API_BASE_URL=/api

@@ -1,0 +1,211 @@
+/* src/App.css */
+/* Bagian: Styling Global */
+/* Fungsi: Menyediakan styling dasar dan umum untuk seluruh aplikasi.
+           Ini termasuk reset dasar, font default, dan styling untuk layout utama. */
+
+/* Reset dasar dan font default */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; /* Warna latar belakang netral */
+  color: #1c1e21; /* Warna teks utama */
+  line-height: 1.6; /* Keterbacaan yang lebih baik */
+}
+
+/* Kontainer utama aplikasi */
+.app-container {
+  max-width: 960px; /* Lebar maksimum untuk konten utama */
+  margin: 20px auto; /* Tengahkankan dengan margin atas/bawah */
+  padding: 20px;
+  background-color: #ffffff; /* Latar belakang putih untuk area konten */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow halus */
+}
+
+/* Styling untuk Navbar (jika komponen Navbar sederhana) */
+nav.app-navbar {
+  background-color: #2c3e50; /* Biru gelap untuk navbar */
+  padding: 15px 25px;
+  color: white;
+  margin-bottom: 25px;
+  border-radius: 6px; /* Sedikit rounded corner */
+  display: flex; /* Untuk alignment judul dan item lain jika ada */
+  justify-content: space-between; /* Sejajarkan item di navbar */
+  align-items: center; /* Tengahkankan item secara vertikal */
+}
+
+nav.app-navbar h1 {
+  margin: 0;
+  font-size: 1.75em;
+  font-weight: 500; /* Sedikit lebih tebal */
+}
+
+/* Kontainer untuk setiap halaman */
+.page-container {
+  padding: 15px;
+  border-radius: 6px;
+  /* Tidak perlu background atau shadow lagi jika app-container sudah punya */
+}
+
+/* Judul umum */
+h1, h2, h3 {
+  color: #333;
+  margin-top: 0; /* Hapus margin atas default */
+}
+
+/* Styling untuk Alert Messages (global) */
+.alert-display-container {
+  position: fixed; /* Tetap di layar saat scroll */
+  top: 20px; /* Jarak dari atas */
+  left: 50%;
+  transform: translateX(-50%); /* Tengahkankan secara horizontal */
+  z-index: 1050; /* Di atas elemen lain */
+  width: auto; /* Lebar menyesuaikan konten */
+  min-width: 320px; /* Lebar minimum */
+  max-width: 90%; /* Lebar maksimum (responsif) */
+}
+
+.alert-item {
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-align: left; /* Lebih baik untuk pesan yang panjang */
+  font-size: 0.9em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out; /* Animasi masuk */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px) translateX(-50%); }
+  to { opacity: 1; transform: translateY(0) translateX(-50%); }
+}
+
+.alert-item-message {
+  flex-grow: 1; /* Pesan mengambil ruang yang tersedia */
+  margin-right: 10px;
+}
+
+.alert-item-close-button {
+  background: none;
+  border: none;
+  color: inherit; /* Warna tombol mengikuti warna teks alert */
+  font-size: 1.3em;
+  line-height: 1; /* Untuk alignment vertikal yang lebih baik */
+  margin-left: 15px;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 0 5px; /* Sedikit padding agar mudah diklik */
+}
+.alert-item-close-button:hover {
+  opacity: 1;
+}
+
+/* Variasi warna alert */
+.alert-item-error {
+  color: #721c24; /* Teks gelap untuk kontras */
+  background-color: #f8d7da; /* Latar belakang merah muda */
+  border-color: #f5c6cb; /* Border lebih gelap */
+}
+
+.alert-item-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-item-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-item-info {
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+}
+
+/* Styling untuk Form */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600; /* Label sedikit tebal */
+  color: #495057; /* Warna abu-abu gelap untuk label */
+}
+
+.form-group input[type="file"],
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group textarea {
+  width: 100%; /* Lebar penuh */
+  padding: 10px 12px;
+  border: 1px solid #ced4da; /* Border abu-abu muda */
+  border-radius: 4px;
+  box-sizing: border-box; /* Padding dan border termasuk dalam width/height */
+  font-size: 0.95em;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #80bdff; /* Warna border saat fokus (biru muda) */
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Glow effect saat fokus */
+}
+
+.form-button {
+  background-color: #007bff; /* Biru primer (Bootstrap) */
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form-button:hover:not(:disabled) {
+  background-color: #0056b3; /* Biru lebih gelap saat hover */
+}
+
+.form-button:disabled {
+  background-color: #e9ecef; /* Warna abu-abu untuk tombol disable */
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Hasil Analisis */
+.analysis-results-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa; /* Latar belakang sedikit berbeda untuk hasil */
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+}
+
+.analysis-results-container h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50; /* Warna judul yang konsisten dengan navbar */
+}
+
+.analysis-results-container pre {
+  background-color: #e9ecef; /* Latar belakang untuk blok kode/JSON */
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  border-radius: 4px;
+  white-space: pre-wrap; /* Agar teks panjang wrap */
+  word-break: break-all;  /* Agar kata panjang dipecah */
+  font-size: 0.85em; /* Font lebih kecil untuk JSON */
+  color: #212529;
+}
